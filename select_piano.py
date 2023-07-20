@@ -33,7 +33,7 @@ def self_click(xpath, driver=driver):
         driver.execute_script("arguments[0].click();", temp)
         driver.switch_to.window(driver.window_handles[-1])
     except:
-        return "出错，未定位到元素"
+        print("出错，未定位到元素")
 
 
 def self_input(xpath, input_element, driver=driver):
@@ -41,7 +41,7 @@ def self_input(xpath, input_element, driver=driver):
         myElem = WebDriverWait(driver, delay).until(EC.presence_of_element_located((By.XPATH, xpath)))
         driver.find_element(By.XPATH, xpath).send_keys(input_element)
     except:
-        return "出错，未定位到元素"
+        print("出错，未定位到元素")
 
 
 def self_input_enter(xpath, input_element, driver=driver):
