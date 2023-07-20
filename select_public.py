@@ -49,7 +49,7 @@ def self_input_enter(xpath, input_element, driver=driver):
         myElem = WebDriverWait(driver, delay).until(EC.presence_of_element_located((By.XPATH, xpath)))
         driver.find_element(By.XPATH, xpath).send_keys(input_element, Keys.ENTER)
     except:
-        return "出错，未定位到元素"
+        print("出错，未定位到元素")
 
 
 def relocate():
